@@ -1344,7 +1344,7 @@ public class CallCardFragment extends BaseFragment<CallCardPresenter, CallCardPr
     private void setDetailedInfo(String nickName, String organization,
             String position, String city) {
         boolean showInfo;
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        final SharedPreferences prefs = InCallApp.getPrefs(getActivity());
 
         if (prefs.getBoolean(PREFS_KEY_DETAILED_INFO, false)) {
             showInfo = fillTextView(mNickName, nickName);
